@@ -1,0 +1,30 @@
+#ifndef SCENEENVIROMENT_H
+#define SCENEENVIROMENT_H
+
+#include "Camera.h"
+#include "Vec2.h"
+#include "Vec3.h"
+#include <stddef.h>
+#include "RGB.h"
+
+typedef struct SceneObject SceneObject;
+
+typedef struct SceneEnviroment
+{
+    Camera main_camera;
+
+    double ticks_count;
+
+    SceneObject * objects;
+} SceneEnviroment;
+
+void render_frame_of_enviroment(RGB * frameBuffer,
+                                size_t buffer_height,
+                                size_t buffer_width,
+                                SceneEnviroment * enviroment);
+
+RGB castRay(Vec3 origin, Vec3 direction, SceneEnviroment * enviroment);
+
+SceneObject * getNearestObject(SceneEnviroment * scene, Vec3 point, double * dest);
+
+#endif
