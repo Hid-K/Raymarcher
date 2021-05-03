@@ -1,9 +1,8 @@
-#include "Vec3.h"
-#include "Vec2.h"
-#include "SceneEnviroment.h"
+#include "Vec/Vec.h"
+#include "SceneEnviroment/SceneEnviroment.h"
 #include <SDL.h>
 #include <stddef.h>
-#include "SceneObjects.h"
+#include "SceneEnviroment/SceneObjects.h"
 
 size_t windowWidth = 255;
 size_t windowHeight = 255;

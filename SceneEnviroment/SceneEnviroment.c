@@ -1,23 +1,12 @@
 #include "SceneEnviroment.h"
 
-#include "Vec2.h"
-#include "Vec3.h"
-#include "RGB.h"
-#include <stdlib.h>
-
 #include "SceneObjects.h"
-
-Vec3 light;
 
 void render_frame_of_enviroment_PARALEL(RGB * frame_buffer,
                                 size_t buffer_height,
                                 size_t buffer_width,
                                 SceneEnviroment * enviroment)
 {
-    light.x = rand()%20;
-    light.y = rand()%20;
-    light.z = rand()%20;
-
     double X_scalar = 1;
     double Y_scalar = 1;
     // double fov = 1;
@@ -83,10 +72,6 @@ void render_frame_of_enviroment_PERSPECTIVE(RGB * frame_buffer,
                                             size_t buffer_width,
                                             SceneEnviroment * enviroment)
 {
-    light.x = rand()%20;
-    light.y = rand()%20;
-    light.z = rand()%20;
-
     double X_scalar = 1;
     double Y_scalar = 1;
     // double fov = 1;

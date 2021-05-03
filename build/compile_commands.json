@@ -1,13 +1,13 @@
 [
 {
   "directory": "/Users/laptevaleksander/Documents/Projects/RayMarching/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviromentFrameRenderer.c.o -c /Users/laptevaleksander/Documents/Projects/RayMarching/SceneEnviromentFrameRenderer.c",
-  "file": "/Users/laptevaleksander/Documents/Projects/RayMarching/SceneEnviromentFrameRenderer.c"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment/SceneEnviroment.c.o -c /Users/laptevaleksander/Documents/Projects/RayMarching/SceneEnviroment/SceneEnviroment.c",
+  "file": "/Users/laptevaleksander/Documents/Projects/RayMarching/SceneEnviroment/SceneEnviroment.c"
 },
 {
   "directory": "/Users/laptevaleksander/Documents/Projects/RayMarching/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneObjects.c.o -c /Users/laptevaleksander/Documents/Projects/RayMarching/SceneObjects.c",
-  "file": "/Users/laptevaleksander/Documents/Projects/RayMarching/SceneObjects.c"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment/SceneObjects.c.o -c /Users/laptevaleksander/Documents/Projects/RayMarching/SceneEnviroment/SceneObjects.c",
+  "file": "/Users/laptevaleksander/Documents/Projects/RayMarching/SceneEnviroment/SceneObjects.c"
 },
 {
   "directory": "/Users/laptevaleksander/Documents/Projects/RayMarching/build",
@@ -16,12 +16,12 @@
 },
 {
   "directory": "/Users/laptevaleksander/Documents/Projects/RayMarching/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o CMakeFiles/Vec2_LIBRARY.dir/Vec2.c.o -c /Users/laptevaleksander/Documents/Projects/RayMarching/Vec2.c",
-  "file": "/Users/laptevaleksander/Documents/Projects/RayMarching/Vec2.c"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o CMakeFiles/Vec2_LIBRARY.dir/Vec/Vec2/Vec2.c.o -c /Users/laptevaleksander/Documents/Projects/RayMarching/Vec/Vec2/Vec2.c",
+  "file": "/Users/laptevaleksander/Documents/Projects/RayMarching/Vec/Vec2/Vec2.c"
 },
 {
   "directory": "/Users/laptevaleksander/Documents/Projects/RayMarching/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o CMakeFiles/Vec3_LIBRARY.dir/Vec3.c.o -c /Users/laptevaleksander/Documents/Projects/RayMarching/Vec3.c",
-  "file": "/Users/laptevaleksander/Documents/Projects/RayMarching/Vec3.c"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o CMakeFiles/Vec3_LIBRARY.dir/Vec/Vec3/Vec3.c.o -c /Users/laptevaleksander/Documents/Projects/RayMarching/Vec/Vec3/Vec3.c",
+  "file": "/Users/laptevaleksander/Documents/Projects/RayMarching/Vec/Vec3/Vec3.c"
 }
 ]

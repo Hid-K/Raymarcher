@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libVec3_LIBRARY.a"
+			"path" : "libVec2_LIBRARY.a"
 		}
 	],
 	"backtrace" : 1,
@@ -26,7 +26,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 13,
 				"parent" : 0
 			},
 			{
@@ -60,9 +60,9 @@
 			]
 		}
 	],
-	"id" : "Vec3_LIBRARY::@6890427a1f51a3e7e1df",
-	"name" : "Vec3_LIBRARY",
-	"nameOnDisk" : "libVec3_LIBRARY.a",
+	"id" : "Vec2_LIBRARY::@6890427a1f51a3e7e1df",
+	"name" : "Vec2_LIBRARY",
+	"nameOnDisk" : "libVec2_LIBRARY.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -89,13 +89,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "Vec3.h",
+			"path" : "Vec/Vec2/Vec2.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Vec3.c",
+			"path" : "Vec/Vec2/Vec2.c",
 			"sourceGroupIndex" : 1
 		}
 	],

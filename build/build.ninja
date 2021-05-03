@@ -66,23 +66,19 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_SceneEnviroment_LIBRARY: phony || CMakeFiles/SceneEnviroment_LIBRARY.dir
 
-build CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviromentFrameRenderer.c.o: C_COMPILER__SceneEnviroment_LIBRARY_Debug ../SceneEnviromentFrameRenderer.c || cmake_object_order_depends_target_SceneEnviroment_LIBRARY
-  DEP_FILE = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviromentFrameRenderer.c.o.d
+build CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment/SceneEnviroment.c.o: C_COMPILER__SceneEnviroment_LIBRARY_Debug ../SceneEnviroment/SceneEnviroment.c || cmake_object_order_depends_target_SceneEnviroment_LIBRARY
+  DEP_FILE = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment/SceneEnviroment.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
   INCLUDES = -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2
   OBJECT_DIR = CMakeFiles/SceneEnviroment_LIBRARY.dir
-  OBJECT_FILE_DIR = CMakeFiles/SceneEnviroment_LIBRARY.dir
-  TARGET_COMPILE_PDB = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment_LIBRARY.pdb
-  TARGET_PDB = libSceneEnviroment_LIBRARY.pdb
+  OBJECT_FILE_DIR = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment
 
-build CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneObjects.c.o: C_COMPILER__SceneEnviroment_LIBRARY_Debug ../SceneObjects.c || cmake_object_order_depends_target_SceneEnviroment_LIBRARY
-  DEP_FILE = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneObjects.c.o.d
+build CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment/SceneObjects.c.o: C_COMPILER__SceneEnviroment_LIBRARY_Debug ../SceneEnviroment/SceneObjects.c || cmake_object_order_depends_target_SceneEnviroment_LIBRARY
+  DEP_FILE = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment/SceneObjects.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
   INCLUDES = -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2
   OBJECT_DIR = CMakeFiles/SceneEnviroment_LIBRARY.dir
-  OBJECT_FILE_DIR = CMakeFiles/SceneEnviroment_LIBRARY.dir
-  TARGET_COMPILE_PDB = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment_LIBRARY.pdb
-  TARGET_PDB = libSceneEnviroment_LIBRARY.pdb
+  OBJECT_FILE_DIR = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment
 
 
 # =============================================================================
@@ -92,15 +88,14 @@ build CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneObjects.c.o: C_COMPILER__Scene
 #############################################
 # Link the static library libSceneEnviroment_LIBRARY.a
 
-build libSceneEnviroment_LIBRARY.a: C_STATIC_LIBRARY_LINKER__SceneEnviroment_LIBRARY_Debug CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviromentFrameRenderer.c.o CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneObjects.c.o
+build libSceneEnviroment_LIBRARY.a: C_STATIC_LIBRARY_LINKER__SceneEnviroment_LIBRARY_Debug CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment/SceneEnviroment.c.o CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment/SceneObjects.c.o
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/SceneEnviroment_LIBRARY.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/SceneEnviroment_LIBRARY.dir/SceneEnviroment_LIBRARY.pdb
   TARGET_FILE = libSceneEnviroment_LIBRARY.a
-  TARGET_PDB = libSceneEnviroment_LIBRARY.pdb
+  TARGET_PDB = SceneEnviroment_LIBRARY.a.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Raymarching
@@ -117,8 +112,6 @@ build CMakeFiles/Raymarching.dir/main.c.o: C_COMPILER__Raymarching_Debug ../main
   INCLUDES = -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2
   OBJECT_DIR = CMakeFiles/Raymarching.dir
   OBJECT_FILE_DIR = CMakeFiles/Raymarching.dir
-  TARGET_COMPILE_PDB = CMakeFiles/Raymarching.dir/
-  TARGET_PDB = Raymarching.pdb
 
 
 # =============================================================================
@@ -134,9 +127,8 @@ build Raymarching: C_EXECUTABLE_LINKER__Raymarching_Debug CMakeFiles/Raymarching
   OBJECT_DIR = CMakeFiles/Raymarching.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/Raymarching.dir/
   TARGET_FILE = Raymarching
-  TARGET_PDB = Raymarching.pdb
+  TARGET_PDB = Raymarching.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target Vec2_LIBRARY
@@ -147,14 +139,12 @@ build Raymarching: C_EXECUTABLE_LINKER__Raymarching_Debug CMakeFiles/Raymarching
 
 build cmake_object_order_depends_target_Vec2_LIBRARY: phony || CMakeFiles/Vec2_LIBRARY.dir
 
-build CMakeFiles/Vec2_LIBRARY.dir/Vec2.c.o: C_COMPILER__Vec2_LIBRARY_Debug ../Vec2.c || cmake_object_order_depends_target_Vec2_LIBRARY
-  DEP_FILE = CMakeFiles/Vec2_LIBRARY.dir/Vec2.c.o.d
+build CMakeFiles/Vec2_LIBRARY.dir/Vec/Vec2/Vec2.c.o: C_COMPILER__Vec2_LIBRARY_Debug ../Vec/Vec2/Vec2.c || cmake_object_order_depends_target_Vec2_LIBRARY
+  DEP_FILE = CMakeFiles/Vec2_LIBRARY.dir/Vec/Vec2/Vec2.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
   INCLUDES = -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2
   OBJECT_DIR = CMakeFiles/Vec2_LIBRARY.dir
-  OBJECT_FILE_DIR = CMakeFiles/Vec2_LIBRARY.dir
-  TARGET_COMPILE_PDB = CMakeFiles/Vec2_LIBRARY.dir/Vec2_LIBRARY.pdb
-  TARGET_PDB = libVec2_LIBRARY.pdb
+  OBJECT_FILE_DIR = CMakeFiles/Vec2_LIBRARY.dir/Vec/Vec2
 
 
 # =============================================================================
@@ -164,15 +154,14 @@ build CMakeFiles/Vec2_LIBRARY.dir/Vec2.c.o: C_COMPILER__Vec2_LIBRARY_Debug ../Ve
 #############################################
 # Link the static library libVec2_LIBRARY.a
 
-build libVec2_LIBRARY.a: C_STATIC_LIBRARY_LINKER__Vec2_LIBRARY_Debug CMakeFiles/Vec2_LIBRARY.dir/Vec2.c.o
+build libVec2_LIBRARY.a: C_STATIC_LIBRARY_LINKER__Vec2_LIBRARY_Debug CMakeFiles/Vec2_LIBRARY.dir/Vec/Vec2/Vec2.c.o
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/Vec2_LIBRARY.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/Vec2_LIBRARY.dir/Vec2_LIBRARY.pdb
   TARGET_FILE = libVec2_LIBRARY.a
-  TARGET_PDB = libVec2_LIBRARY.pdb
+  TARGET_PDB = Vec2_LIBRARY.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target Vec3_LIBRARY
@@ -183,14 +172,12 @@ build libVec2_LIBRARY.a: C_STATIC_LIBRARY_LINKER__Vec2_LIBRARY_Debug CMakeFiles/
 
 build cmake_object_order_depends_target_Vec3_LIBRARY: phony || CMakeFiles/Vec3_LIBRARY.dir
 
-build CMakeFiles/Vec3_LIBRARY.dir/Vec3.c.o: C_COMPILER__Vec3_LIBRARY_Debug ../Vec3.c || cmake_object_order_depends_target_Vec3_LIBRARY
-  DEP_FILE = CMakeFiles/Vec3_LIBRARY.dir/Vec3.c.o.d
+build CMakeFiles/Vec3_LIBRARY.dir/Vec/Vec3/Vec3.c.o: C_COMPILER__Vec3_LIBRARY_Debug ../Vec/Vec3/Vec3.c || cmake_object_order_depends_target_Vec3_LIBRARY
+  DEP_FILE = CMakeFiles/Vec3_LIBRARY.dir/Vec/Vec3/Vec3.c.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
   INCLUDES = -I/usr/local/Cellar/sdl2/2.0.14_1/include/SDL2
   OBJECT_DIR = CMakeFiles/Vec3_LIBRARY.dir
-  OBJECT_FILE_DIR = CMakeFiles/Vec3_LIBRARY.dir
-  TARGET_COMPILE_PDB = CMakeFiles/Vec3_LIBRARY.dir/Vec3_LIBRARY.pdb
-  TARGET_PDB = libVec3_LIBRARY.pdb
+  OBJECT_FILE_DIR = CMakeFiles/Vec3_LIBRARY.dir/Vec/Vec3
 
 
 # =============================================================================
@@ -200,15 +187,14 @@ build CMakeFiles/Vec3_LIBRARY.dir/Vec3.c.o: C_COMPILER__Vec3_LIBRARY_Debug ../Ve
 #############################################
 # Link the static library libVec3_LIBRARY.a
 
-build libVec3_LIBRARY.a: C_STATIC_LIBRARY_LINKER__Vec3_LIBRARY_Debug CMakeFiles/Vec3_LIBRARY.dir/Vec3.c.o
+build libVec3_LIBRARY.a: C_STATIC_LIBRARY_LINKER__Vec3_LIBRARY_Debug CMakeFiles/Vec3_LIBRARY.dir/Vec/Vec3/Vec3.c.o
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/Vec3_LIBRARY.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/Vec3_LIBRARY.dir/Vec3_LIBRARY.pdb
   TARGET_FILE = libVec3_LIBRARY.a
-  TARGET_PDB = libVec3_LIBRARY.pdb
+  TARGET_PDB = Vec3_LIBRARY.a.dbg
 
 # =============================================================================
 # Target aliases.
@@ -241,14 +227,14 @@ build all: phony libSceneEnviroment_LIBRARY.a Raymarching libVec2_LIBRARY.a libV
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCCompiler.cmake.in /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCCompilerABI.c /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCXXCompiler.cmake.in /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCXXInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystem.cmake.in /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeTestCCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeTestCXXCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Clang.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/SDL2/sdl2-config-version.cmake /usr/local/lib/cmake/SDL2/sdl2-config.cmake CMakeCache.txt CMakeFiles/3.19.4/CMakeCCompiler.cmake CMakeFiles/3.19.4/CMakeCXXCompiler.cmake CMakeFiles/3.19.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCXXInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Clang.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/SDL2/sdl2-config-version.cmake /usr/local/lib/cmake/SDL2/sdl2-config.cmake CMakeCache.txt CMakeFiles/3.19.4/CMakeCCompiler.cmake CMakeFiles/3.19.4/CMakeCXXCompiler.cmake CMakeFiles/3.19.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCCompiler.cmake.in /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCCompilerABI.c /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCXXCompiler.cmake.in /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCXXInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystem.cmake.in /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeTestCCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeTestCXXCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Clang.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/SDL2/sdl2-config-version.cmake /usr/local/lib/cmake/SDL2/sdl2-config.cmake CMakeCache.txt CMakeFiles/3.19.4/CMakeCCompiler.cmake CMakeFiles/3.19.4/CMakeCXXCompiler.cmake CMakeFiles/3.19.4/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCXXInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeGenericSystem.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/Clang.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Compiler/GNU.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang-C.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Apple-Clang.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin-Initialize.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/Darwin.cmake /usr/local/Cellar/cmake/3.19.4/share/cmake/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/SDL2/sdl2-config-version.cmake /usr/local/lib/cmake/SDL2/sdl2-config.cmake CMakeCache.txt CMakeFiles/3.19.4/CMakeCCompiler.cmake CMakeFiles/3.19.4/CMakeCXXCompiler.cmake CMakeFiles/3.19.4/CMakeSystem.cmake: phony
 
 
 #############################################

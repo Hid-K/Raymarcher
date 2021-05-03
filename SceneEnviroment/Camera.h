@@ -1,8 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include "Vec2.h"
-#include "Vec3.h"
+#include "../Vec/Vec.h"
 
 
 typedef struct

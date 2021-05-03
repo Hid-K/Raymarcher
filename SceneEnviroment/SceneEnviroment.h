@@ -2,10 +2,10 @@
 #define SCENEENVIROMENT_H
 
 #include "Camera.h"
-#include "Vec2.h"
-#include "Vec3.h"
+#include "../Vec/Vec.h"
 #include <stddef.h>
-#include "RGB.h"
+#include <stdlib.h>
+#include "../RGB.h"
 
 typedef struct SceneObject SceneObject;
 
