@@ -2,10 +2,10 @@
 #define SCENEENVIROMENT_H
 
 #include "Camera.h"
-#include "Vec2.h"
-#include "Vec3.h"
+#include "../Vec/Vec.h"
 #include <stddef.h>
-#include "RGB.h"
+#include <stdlib.h>
+#include "../RGB.h"
 
 typedef struct SceneObject SceneObject;
 
@@ -18,7 +18,12 @@ typedef struct SceneEnviroment
     SceneObject * objects;
 } SceneEnviroment;
 
-void render_frame_of_enviroment(RGB * frameBuffer,
+void render_frame_of_enviroment_PARALEL(RGB * frameBuffer,
+                                size_t buffer_height,
+                                size_t buffer_width,
+                                SceneEnviroment * enviroment);
+
+void render_frame_of_enviroment_PERSPECTIVE(RGB * frameBuffer,
                                 size_t buffer_height,
                                 size_t buffer_width,
                                 SceneEnviroment * enviroment);

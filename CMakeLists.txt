@@ -6,21 +6,21 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 
 add_library(Vec3_LIBRARY STATIC
-  Vec3.h
-  Vec3.c
+  Vec/Vec3/Vec3.h
+  Vec/Vec3/Vec3.c
 )
 
 add_library(Vec2_LIBRARY STATIC
-  Vec2.h
-  Vec2.c
+  Vec/Vec2/Vec2.h
+  Vec/Vec2/Vec2.c
 )
 
 add_library(SceneEnviroment_LIBRARY STATIC
-  SceneEnviroment.h
-  SceneEnviromentFrameRenderer.c
+  SceneEnviroment/SceneEnviroment.h
+  SceneEnviroment/SceneEnviroment.c
 
-  SceneObjects.h
-  SceneObjects.c
+  SceneEnviroment/SceneObjects.h
+  SceneEnviroment/SceneObjects.c
 )
 
 add_executable(${PROJECT_NAME} main.c)

@@ -1,9 +1,8 @@
-#include "Vec3.h"
-#include "Vec2.h"
-#include "SceneEnviroment.h"
+#include "Vec/Vec.h"
+#include "SceneEnviroment/SceneEnviroment.h"
 #include <SDL.h>
 #include <stddef.h>
-#include "SceneObjects.h"
+#include "SceneEnviroment/SceneObjects.h"
 
 size_t windowWidth = 255;
 size_t windowHeight = 255;
@@ -115,7 +114,7 @@ int main()
         };
         
         SDL_RenderClear(mainWindowRenderer);
-        render_frame_of_enviroment(&frame_buffer[0][0], 255, 255, &scieneEnv);
+        render_frame_of_enviroment_PARALEL(&frame_buffer[0][0], 255, 255, &scieneEnv);
         for(size_t x = 0; x < windowWidth; ++x)
         {
             for(size_t y = 0; y < windowHeight; ++y)
