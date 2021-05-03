@@ -115,7 +115,7 @@ int main()
         };
         
         SDL_RenderClear(mainWindowRenderer);
-        render_frame_of_enviroment(&frame_buffer[0][0], 255, 255, &scieneEnv);
+        render_frame_of_enviroment_PARALEL(&frame_buffer[0][0], 255, 255, &scieneEnv);
         for(size_t x = 0; x < windowWidth; ++x)
         {
             for(size_t y = 0; y < windowHeight; ++y)

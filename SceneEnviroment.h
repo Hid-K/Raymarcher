@@ -18,7 +18,12 @@ typedef struct SceneEnviroment
     SceneObject * objects;
 } SceneEnviroment;
 
-void render_frame_of_enviroment(RGB * frameBuffer,
+void render_frame_of_enviroment_PARALEL(RGB * frameBuffer,
+                                size_t buffer_height,
+                                size_t buffer_width,
+                                SceneEnviroment * enviroment);
+
+void render_frame_of_enviroment_PERSPECTIVE(RGB * frameBuffer,
                                 size_t buffer_height,
                                 size_t buffer_width,
                                 SceneEnviroment * enviroment);
