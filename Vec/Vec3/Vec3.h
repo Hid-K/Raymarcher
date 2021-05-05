@@ -22,4 +22,6 @@ Vec3 divide(Vec3 a, double b);
 
 double prod(Vec3 a, Vec3 b);
 
+Vec3 getReflection(Vec3 n, Vec3 l);
+
 #endif

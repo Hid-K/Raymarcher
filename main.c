@@ -53,20 +53,21 @@ int main()
             100
         },
         0,
-        malloc(sizeof(struct SceneObject) * 2)
+        2,
+        malloc(sizeof(struct SceneObject) * scieneEnv.objects_count)
     };
 
     Vec3 SCobjectPos = {0,10,0};
 
-    SceneObject SCobject = createSimpleSphere(5, SCobjectPos);
+    SceneObject SCobject = createSimpleSphere(9, SCobjectPos, &scieneEnv);
 
     memcpy(&scieneEnv.objects[0], &SCobject, sizeof(SCobject));
 
     SCobjectPos.x = 20;
-    SCobjectPos.y = 11;
+    SCobjectPos.y = 9;
     SCobjectPos.z = 20;
 
-    SCobject = createSimpleSphere(5, SCobjectPos);
+    SCobject = createSimpleSphere(9, SCobjectPos, &scieneEnv);
 
     memcpy(&scieneEnv.objects[1], &SCobject, sizeof(SCobject));
 

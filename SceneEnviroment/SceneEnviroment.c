@@ -7,8 +7,8 @@ void render_frame_of_enviroment_PARALEL(RGB * frame_buffer,
                                 size_t buffer_width,
                                 SceneEnviroment * enviroment)
 {
-    double X_scalar = 1;
-    double Y_scalar = 1;
+    double X_scalar = 5;
+    double Y_scalar = 5;
     // double fov = 1;
     Vec3 camera_pixel_plane_left_up_render_corner_vector;
     camera_pixel_plane_left_up_render_corner_vector = add(
@@ -55,18 +55,27 @@ void render_frame_of_enviroment_PARALEL(RGB * frame_buffer,
 
             Vec3 ray_direction_bias = add(multiply(frame_buffer_pixel_to_ray_direction_X_ratio, buffer_width  - x),
                                           multiply(frame_buffer_pixel_to_ray_direction_Y_ratio, buffer_height - y));
-            Vec3 ray_direction = add(camera_pixel_plane_left_up_render_corner_vector, ray_direction_bias);
+            Vec3 ray_origin = add(camera_pixel_plane_left_up_render_corner_vector, ray_direction_bias);
 
-            frame_buffer[x + y * buffer_width] = castRay(substract(ray_direction, enviroment->main_camera.direction),
-                                                        enviroment->main_camera.direction,
-                                                        enviroment
-                                                        );
+            CameraRay ray;
+            ray.direction = enviroment->main_camera.direction;
+            ray.origin = ray_origin;
+            ray.end = ray.origin;
+            ray.parentCamera = &enviroment->main_camera;
+            ray.path_way = 0;
+            ray.reflections_count = 0;
+
+            RGB ray_color = castRay(&ray, enviroment);
+
+            normalize_color(&ray_color);
+
+            frame_buffer[x + y * buffer_width] = ray_color;
         };
     };
 
     return;
 };
-
+/*
 void render_frame_of_enviroment_PERSPECTIVE(RGB * frame_buffer,
                                             size_t buffer_height,
                                             size_t buffer_width,
@@ -122,59 +131,64 @@ void render_frame_of_enviroment_PERSPECTIVE(RGB * frame_buffer,
                                           multiply(frame_buffer_pixel_to_ray_direction_Y_ratio, buffer_height - y));
             Vec3 ray_direction = normalize(add(camera_pixel_plane_left_up_render_corner_vector, ray_direction_bias));
 
-            frame_buffer[x + y * buffer_width] = castRay(enviroment->main_camera.origin,
-                                                        ray_direction,
-                                                        enviroment
-                                                        );
+            CameraRay ray;
+            ray.direction = normalize(add(camera_pixel_plane_left_up_render_corner_vector, ray_direction_bias));
+            ray.origin = enviroment->main_camera.origin;
+            ray.end = ray.origin;
+            ray.parentCamera = &enviroment->main_camera;
+            ray.path_way = 0;
+            ray.reflections_count = 0;
+
+            RGB ray_color = castRay(ray, enviroment);
+
+            normalize_color(&ray_color);
+
+            frame_buffer[x + y * buffer_width] = ray_color;
         };
     };
 
     return;
 };
+*/
 
-double absd (double a)
+static inline double absd(double a)
 {
-    if(a < 0){return a * (-1);}
-    else return a;
+    /*
+                "& 0b0111111111111111111111111111111111111111111111111111111111111111" turns - sign into + in a var.
+
+                Eto pizdec.
+    */
+    return (double)((long)a & 0b0111111111111111111111111111111111111111111111111111111111111111);
 };
 
-RGB castRay(Vec3 origin, Vec3 direction, SceneEnviroment * enviroment)
+inline RGB castRay(CameraRay * ray, SceneEnviroment * enviroment)
 {
-
     RGB resultColor = {0,0,0};
 
-    CameraRay currientRay;
-    currientRay.origin = origin;
-
-    currientRay.end = origin;
-
-    currientRay.direction = direction;
-
-    currientRay.parentCamera = &enviroment->main_camera;
-
-    for(double rayLength = 0.0; rayLength <= 100;)
+    for(;ray->path_way <= 100.0;)
     {
         double nearestObjectDest;
-        SceneObject * nearectObject = getNearestObject(enviroment, currientRay.end, &nearestObjectDest);
-        
-        rayLength += nearestObjectDest;
+        SceneObject * nearectObject = getNearestObject(enviroment, ray->end, &nearestObjectDest);
 
-        if(nearestObjectDest <= 0.01)
+        ray->path_way += nearestObjectDest;
+
+        if( nearestObjectDest <= NEAR &&
+            (nearestObjectDest >= 0 || absd(nearestObjectDest) == 0.0) )
         {
-            return nearectObject->shader(&currientRay, nearectObject);
+            return nearectObject->shader(ray, nearectObject);
         };
-        Vec3 dCurrPoint = multiply(direction, nearestObjectDest);
-        currientRay.end = add(currientRay.end, dCurrPoint);
+        Vec3 dCurrPoint = multiply(ray->direction, nearestObjectDest);
+        ray->end = add(ray->end, dCurrPoint);
     };
     return resultColor;
 };
 
-SceneObject * getNearestObject(SceneEnviroment * scene, Vec3 point, double * dest)
+inline SceneObject * getNearestObject(SceneEnviroment * scene, Vec3 point, double * dest)
 {
     double currObjectDest       = (*dest = scene->objects[0].get_distance(point, &scene->objects[0]));
     SceneObject * nearestObject = &scene->objects[0];
 
-    for(size_t i = 0; i < 2; ++i)
+    for(size_t i = 0; i < scene->objects_count; ++i)
     {
         if((currObjectDest = scene->objects[i].get_distance(point, &scene->objects[i])) < *dest)
         {

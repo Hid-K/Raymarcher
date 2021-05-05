@@ -30,7 +30,7 @@ inline Vec3 substract(Vec3 a, Vec3 b)
     return result;
 };
 
-Vec3 divide(Vec3 a, double b)
+inline Vec3 divide(Vec3 a, double b)
 {
     Vec3 result = {a.x/b, a.y/b, a.z/b};
     return result;
@@ -39,4 +39,9 @@ Vec3 divide(Vec3 a, double b)
 double prod(Vec3 a, Vec3 b)
 {
     return a.x*b.x + a.y*b.y + a.z*b.z;
+};
+
+inline Vec3 getReflection(Vec3 n, Vec3 l)
+{
+    return substract(multiply(n,prod(n,l)*2), l);
 };
