@@ -72,7 +72,7 @@ int main()
     memcpy(&scieneEnv.objects[1], &SCobject, sizeof(SCobject));
 
     Vec2 n = {0,0};
-    Vec2 n1 = {255,255};
+    Vec2 n1 = {windowWidth,windowHeight};
 
     for(;quit == 0;)
     {
@@ -115,7 +115,7 @@ int main()
         };
         
         SDL_RenderClear(mainWindowRenderer);
-        render_frame_of_enviroment_PARALEL(&frame_buffer[0][0], 255, 255, &scieneEnv);
+        render_frame_of_enviroment_PARALEL(&frame_buffer[0][0], n, n1, 255, 255, &scieneEnv);
         for(size_t x = 0; x < windowWidth; ++x)
         {
             for(size_t y = 0; y < windowHeight; ++y)

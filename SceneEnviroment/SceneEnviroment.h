@@ -24,9 +24,11 @@ typedef struct SceneEnviroment
 } SceneEnviroment;
 
 void render_frame_of_enviroment_PARALEL(RGB * frameBuffer,
-                                size_t buffer_height,
-                                size_t buffer_width,
-                                SceneEnviroment * enviroment);
+                                        Vec2 left_up_render_corner,
+                                        Vec2 right_down_render_corner,
+                                        size_t buffer_height,
+                                        size_t buffer_width,
+                                        SceneEnviroment * enviroment);
 /*
 void render_frame_of_enviroment_PERSPECTIVE(RGB * frameBuffer,
                                 size_t buffer_height,

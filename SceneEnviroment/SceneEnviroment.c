@@ -3,9 +3,11 @@
 #include "SceneObjects.h"
 
 void render_frame_of_enviroment_PARALEL(RGB * frame_buffer,
-                                size_t buffer_height,
-                                size_t buffer_width,
-                                SceneEnviroment * enviroment)
+                                        Vec2 left_up_render_corner,
+                                        Vec2 right_down_render_corner,
+                                        size_t buffer_height,
+                                        size_t buffer_width,
+                                        SceneEnviroment * enviroment)
 {
     double X_scalar = 5;
     double Y_scalar = 5;
@@ -48,9 +50,9 @@ void render_frame_of_enviroment_PARALEL(RGB * frame_buffer,
 
     // enviroment->ticks_count++;
 
-    for(size_t x = 0; x < buffer_width; ++x)
+    for(size_t x = left_up_render_corner.x; x < right_down_render_corner.x; ++x)
     {
-        for(size_t y = 0; y < buffer_height; ++y)
+        for(size_t y = left_up_render_corner.y; y < right_down_render_corner.y; ++y)
         {
 
             Vec3 ray_direction_bias = add(multiply(frame_buffer_pixel_to_ray_direction_X_ratio, buffer_width  - x),
