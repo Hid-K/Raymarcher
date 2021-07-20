@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(Raymarching VERSION 0.1.0)
 
-set(C_STANDARD C17)
+set(C_STANDARD 99)
 
 find_package(SDL2 REQUIRED)
 

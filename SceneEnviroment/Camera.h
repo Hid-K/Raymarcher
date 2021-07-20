@@ -8,9 +8,9 @@
 typedef struct
 {
     Vec3 origin;
+    Vec3 right;
     Vec3 direction;
     Vec3 up;
-    Vec3 right;
 
     double FOV;
 } Camera;

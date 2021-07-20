@@ -3,7 +3,7 @@
 
 typedef struct
 {
-    float r,g,b;
+    double r,g,b;
 } RGB;
 
 void normalize_color(RGB * color);

@@ -16,5 +16,6 @@ typedef struct SceneObject
 } SceneObject;
 
 SceneObject createSimpleSphere(double radius, Vec3 origin, SceneEnviroment * sceneEnv);
+SceneObject createSimpleFlatSurface(SceneEnviroment * sceneEnv, double z_pos);
 
 #endif
