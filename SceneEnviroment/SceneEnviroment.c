@@ -172,7 +172,7 @@ inline RGB castRay(CameraRay * ray, SceneEnviroment * enviroment)
     for(;ray->path_way <= enviroment->main_camera.FOV;)
     {
         double nearestObjectDest = 0;
-        SceneObject * nearectObject = getNearestObject(enviroment, ray->end, &nearestObjectDest);
+        register SceneObject * nearectObject = getNearestObject(enviroment, ray->end, &nearestObjectDest);
 
         ray->path_way += fabs(nearestObjectDest);
 
@@ -181,7 +181,7 @@ inline RGB castRay(CameraRay * ray, SceneEnviroment * enviroment)
            (nearestObjectDest >= 0.0 || absd(nearestObjectDest) == 0.0)
           )
         {
-            double a = 80;
+            static const double a = 80;
 
             resultColor = nearectObject->shader(ray, nearectObject);
             resultColor.r /= ray->path_way/a;
@@ -212,8 +212,8 @@ inline RGB castRay(CameraRay * ray, SceneEnviroment * enviroment)
 
 inline SceneObject * getNearestObject(SceneEnviroment * scene, Vec3 point, double * dest)
 {
-    double currObjectDest       = (*dest = scene->objects[0].get_distance(point, &scene->objects[0]));
-    SceneObject * nearestObject = &scene->objects[0];
+    register double currObjectDest       = (*dest = scene->objects[0].get_distance(point, &scene->objects[0]));
+    register SceneObject * nearestObject = &scene->objects[0];
 
     for(size_t i = 0; i < scene->objects_count; ++i)
     {

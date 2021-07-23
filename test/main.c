@@ -55,7 +55,7 @@ int main()
             200
         },
         0,
-        1,
+        3,
         malloc(sizeof(struct SceneObject) * scieneEnv.objects_count)
     };
 
@@ -65,17 +65,17 @@ int main()
 
     memcpy(&scieneEnv.objects[0], &SCobject, sizeof(SCobject));
 
-    // SCobjectPos.x = 10;
-    // SCobjectPos.y = 10;
-    // SCobjectPos.z = 10;
+    SCobjectPos.x = 10;
+    SCobjectPos.y = 10;
+    SCobjectPos.z = 10;
 
-    // SCobject = createSimpleSphere(5, SCobjectPos, &scieneEnv);
+    SCobject = createSimpleSphere(5, SCobjectPos, &scieneEnv);
 
-    // memcpy(&scieneEnv.objects[1], &SCobject, sizeof(SCobject));
+    memcpy(&scieneEnv.objects[1], &SCobject, sizeof(SCobject));
 
-    // SCobject = createSimpleFlatSurface(&scieneEnv, 0);
+    SCobject = createSimpleFlatSurface(&scieneEnv, 0);
 
-    // memcpy(&scieneEnv.objects[1], &SCobject, sizeof(SCobject));
+    memcpy(&scieneEnv.objects[2], &SCobject, sizeof(SCobject));
 
     Vec2 n = {0,0};
     Vec2 n1 = {windowWidth,windowHeight};

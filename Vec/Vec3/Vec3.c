@@ -91,5 +91,5 @@ double __attribute__((overloadable)) prod(Vec3 a, Vec3 b)
 
 inline Vec3 __attribute__((overloadable)) getReflection(Vec3 n, Vec3 l)
 {
-    return substract(multiply(n,prod(n,l)*2), l);
+    return substract(l, multiply(n, 2 * prod(n, l)));
 };

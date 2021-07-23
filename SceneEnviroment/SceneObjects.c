@@ -12,19 +12,14 @@ double surfaceDestFunction(Vec3 point, const SceneObject * this)
     return fabs(*((double*)(this->objectSpecialData)) - point.z);
 };
 
-RGB simpleREDShader(CameraRay * ray, const SceneObject * this)
+RGB simpleRaindowShader(CameraRay * ray, const SceneObject * this)
 {
-    RGB color_spectrum = {0.5, -0.1, -0.1};
+    RGB color_spectrum = {0, 0, 0};
     if(ray->reflections_count <= 3)
     {
         Vec3 normal = normalize(substract(ray->end, this->origin));
 
-        // RGB color_spectrum = {sin(normal.x*10), sin(normal.y*10), sin(normal.z*10)};
-
-        // printf("\n%f\n", this->get_distance(add(ray->end, normal), this));
-        // printf("%f\n",   this->get_distance(ray->end,              this));
-
-        ray->direction = normal;
+        ray->direction = getReflection(normal, ray->direction);
 
         ray->origin = add(ray->end, multiply(normal, NEAR));
         ray->end = ray->origin;
@@ -58,14 +53,14 @@ RGB simpleGRAYShader(CameraRay * ray, const SceneObject * this)
         // printf("\n%f\n", this->get_distance(add(ray->end, normal), this));
         // printf("%f\n",   this->get_distance(ray->end,              this));
 
-        ray->direction = normal;
+        ray->direction = getReflection(normal, ray->direction);
 
         ray->origin = add(ray->end, multiply(normal, NEAR+NEAR/10));
         ray->end = ray->origin;
 
         ray->reflections_count++;
 
-        RGB res;
+        RGB res = castRay(ray, this->parentEnviroment);
 
         res = add_color(res, color_spectrum);
 
@@ -86,7 +81,7 @@ SceneObject createSimpleSphere(double radius, Vec3 origin, SceneEnviroment * sce
     sphere.parentEnviroment = sceneEnv;
 
     sphere.get_distance = sphereDestFunction;
-    sphere.shader = simpleREDShader;
+    sphere.shader = simpleRaindowShader;
 
     sphere.origin = origin;
 
