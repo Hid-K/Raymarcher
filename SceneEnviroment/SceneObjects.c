@@ -43,7 +43,7 @@ RGB simpleRaindowShader(CameraRay * ray, const SceneObject * this)
 
 RGB simpleGRAYShader(CameraRay * ray, const SceneObject * this)
 {
-    RGB color_spectrum = {0.5, 0.5, 0.5};
+    RGB color_spectrum = {1, 1, 1};
     if(ray->reflections_count <= 3)
     {
         Vec3 normal = {0,0, (double)(fabs(*((double*)(this->objectSpecialData)) - ray->end.z)/(*((double*)(this->objectSpecialData)) - ray->end.z)) };
