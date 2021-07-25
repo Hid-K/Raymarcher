@@ -3,8 +3,12 @@
 
 typedef struct
 {
-    float r,g,b;
+    double r,g,b;
 } RGB;
+
+void normalize_color(RGB * color);
+
+RGB add_color(RGB a, RGB b);
 
 static const RGB RGB_RED  = {1,0,0};
 static const RGB RGB_GREN = {0,1,0};
