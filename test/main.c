@@ -49,9 +49,9 @@ int main()
     {
         {
             {0,0,50},
-            {1,0,0},
             {0,1,0},
-            {0,0,1},
+            {0,0,-1},
+            {1,0,0},
             200
         },
         0,
@@ -59,15 +59,15 @@ int main()
         malloc(sizeof(struct SceneObject) * scieneEnv.objects_count)
     };
 
-    Vec3 SCobjectPos = {0,0,0};
+    Vec3 SCobjectPos = {0,0,10};
 
-    SceneObject SCobject = createSimpleSphere(5, SCobjectPos, &scieneEnv);
+    SceneObject SCobject = createSimpleSphere(10, SCobjectPos, &scieneEnv);
 
     memcpy(&scieneEnv.objects[0], &SCobject, sizeof(SCobject));
 
-    SCobjectPos.x = 10;
-    SCobjectPos.y = 10;
-    SCobjectPos.z = 10;
+    SCobjectPos.x = 20;
+    SCobjectPos.y = 20;
+    SCobjectPos.z = 20;
 
     SCobject = createSimpleSphere(5, SCobjectPos, &scieneEnv);
 
@@ -80,21 +80,27 @@ int main()
     Vec2 n = {0,0};
     Vec2 n1 = {windowWidth,windowHeight};
 
-    double camXDAngle = M_PI/6;
-    double camYDAngle = M_PI/50;
+    double camXDAngle = 0;
+    double camYDAngle = 0;
     double camZDAngle = 0;
 
     for(;quit == 0;)
     {
-        scieneEnv.main_camera.direction = rotateAboutX(scieneEnv.main_camera.direction, camXDAngle);
-        scieneEnv.main_camera.right     = rotateAboutX(scieneEnv.main_camera.right,     camXDAngle);
-        scieneEnv.main_camera.up        = rotateAboutX(scieneEnv.main_camera.up,        camXDAngle);
-        // scieneEnv.main_camera.direction = rotateAboutY(scieneEnv.main_camera.direction, camYDAngle);
-        // scieneEnv.main_camera.direction = rotateAboutZ(scieneEnv.main_camera.direction, camZDAngle);
+        // scieneEnv.main_camera.direction = rotateAboutX(scieneEnv.main_camera.direction, camXDAngle);
+        // scieneEnv.main_camera.right     = rotateAboutX(scieneEnv.main_camera.right,     camXDAngle);
+        // scieneEnv.main_camera.up        = rotateAboutX(scieneEnv.main_camera.up,        camXDAngle);
 
-        // camXDAngle = 0;
-        // camYDAngle = 0;
-        // camZDAngle = 0;
+        scieneEnv.main_camera.direction = rotateAboutY(scieneEnv.main_camera.direction, camYDAngle);
+        scieneEnv.main_camera.right     = rotateAboutY(scieneEnv.main_camera.right,     camYDAngle);
+        scieneEnv.main_camera.up        = rotateAboutY(scieneEnv.main_camera.up,        camYDAngle);
+
+        scieneEnv.main_camera.direction = rotateAboutZ(scieneEnv.main_camera.direction, camZDAngle);
+        scieneEnv.main_camera.right     = rotateAboutZ(scieneEnv.main_camera.right,     camZDAngle);
+        scieneEnv.main_camera.up        = rotateAboutZ(scieneEnv.main_camera.up,        camZDAngle);
+
+        camXDAngle = 0;
+        camYDAngle = 0;
+        camZDAngle = 0;
 
         // scieneEnv.main_camera.up = rotateAboutX(scieneEnv.main_camera.up, a);
 
@@ -127,9 +133,35 @@ int main()
                         stopPos.y = (double)event.button.y;
                     };
                     Vec2 dPos = substract(stopPos, startPos);
-                    
-                    // camZDAngle = dPos.x/100;
-                    // camYDAngle = dPos.y/100;
+
+                    camZDAngle += M_PI_4*(dPos.x/windowWidth);
+                    camYDAngle += M_PI_4*(dPos.y/windowHeight);
+                } else if(event.button.button == SDL_BUTTON_RIGHT)
+                {
+                    Vec2 startPos = {(double)event.button.x, (double)event.button.y};
+                    Vec2 stopPos;
+                    for(;SDL_PollEvent(&event);)
+                    {
+                        stopPos.x = (double)event.button.x;
+                        stopPos.y = (double)event.button.y;
+                    };
+                    Vec2 dPos = substract(stopPos, startPos);
+
+                    scieneEnv.main_camera.origin = add(scieneEnv.main_camera.origin,
+                                                       multiply(scieneEnv.main_camera.right, dPos.x/windowWidth*(10)));
+
+                    scieneEnv.main_camera.origin = add(scieneEnv.main_camera.origin,
+                                                       multiply(scieneEnv.main_camera.up, dPos.y/windowHeight*(10)));
+                };
+            break;
+
+            case SDL_MOUSEWHEEL:
+                if(event.wheel.direction == SDL_MOUSEWHEEL_NORMAL)
+                {
+                    scieneEnv.main_camera.origin = add(scieneEnv.main_camera.origin, multiply(scieneEnv.main_camera.direction, event.wheel.y));
+                }else if(event.wheel.direction == SDL_MOUSEWHEEL_FLIPPED)
+                {
+                    scieneEnv.main_camera.origin = add(scieneEnv.main_camera.origin, multiply(scieneEnv.main_camera.direction, -event.wheel.y));
                 };
             break;
 

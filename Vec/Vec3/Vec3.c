@@ -45,7 +45,7 @@ Vec3 __attribute__((overloadable)) rotateAboutZ(Vec3 v, double a)
 {
     Vec3 c1 = {cos(a),-sin(a),0};
     Vec3 c2 = {sin(a),cos(a),0};
-    Vec3 c3 = {0,0,0};
+    Vec3 c3 = {0,0,1};
 
     Vec3 res = {prod(v, c1), prod(v, c2), prod(v, c3)};
 
