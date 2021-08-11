@@ -10,6 +10,7 @@ typedef struct SceneObject
     SceneEnviroment * parentEnviroment;
     RGB (*shader)(CameraRay * ray, const SceneObject * this);
     double (*get_distance)(Vec3 point, const SceneObject * this);
+    Vec3 (*rayDeflection)(CameraRay * ray, const SceneObject * this);
 
     void * objectSpecialData;
 

@@ -107,3 +107,39 @@ SceneObject createSimpleFlatSurface(SceneEnviroment * sceneEnv, double z_pos)
 
     return surface;
 };
+
+
+double getMirrorDest(Vec3 point, const SceneObject * this)
+{
+    return fabs(10 - point.x) - 1;
+};
+
+RGB mirrorShader(CameraRay * ray, const SceneObject * this)
+{
+    // if(ray->reflections_count <= 3)
+    // {
+    //     Vec3 normal = {10 - ray->end.x, 0, 0};
+    //     ray->direction = getReflection(normal, ray->direction);
+
+    //     ray->origin = add(ray->end, multiply(normal, NEAR));
+    //     ray->end = ray->origin;
+
+    //     ray->reflections_count++;
+
+    //     return castRay(ray, this->objectSpecialData);
+    // } return RGB_WHI;
+    return RGB_WHI;
+};
+
+SceneObject createMirror(SceneEnviroment * sceneEnv)
+{
+    SceneObject mirror;
+
+    mirror.parentEnviroment = sceneEnv;
+
+    mirror.get_distance = getMirrorDest;
+    mirror.shader = mirrorShader;
+    mirror.rayDeflection = NULL;
+
+    return mirror;
+};
