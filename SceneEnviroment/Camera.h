@@ -25,6 +25,8 @@ typedef struct
 
     size_t reflections_count;
 
+    size_t steps_count;
+
     RGB color;
 
     Camera * parentCamera;

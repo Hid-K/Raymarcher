@@ -19,7 +19,7 @@ inline Vec3 __attribute__((overloadable)) normalize(Vec3 a)
     return result;
 };
 
-Vec3 __attribute__((overloadable)) rotateAboutX(Vec3 v, double a)
+inline Vec3 __attribute__((overloadable)) rotateAboutX(Vec3 v, double a)
 {
     Vec3 c1 = {1,0     ,0      };
     Vec3 c2 = {0,cos(a),-sin(a)};
@@ -30,7 +30,7 @@ Vec3 __attribute__((overloadable)) rotateAboutX(Vec3 v, double a)
     return res;
 };
 
-Vec3 __attribute__((overloadable)) rotateAboutY(Vec3 v, double a)
+inline Vec3 __attribute__((overloadable)) rotateAboutY(Vec3 v, double a)
 {
     Vec3 c1 = {cos(a),0,sin(a)};
     Vec3 c2 = {0,1,0};
@@ -41,7 +41,7 @@ Vec3 __attribute__((overloadable)) rotateAboutY(Vec3 v, double a)
     return res;
 };
 
-Vec3 __attribute__((overloadable)) rotateAboutZ(Vec3 v, double a)
+inline Vec3 __attribute__((overloadable)) rotateAboutZ(Vec3 v, double a)
 {
     Vec3 c1 = {cos(a),-sin(a),0};
     Vec3 c2 = {sin(a),cos(a),0};
@@ -84,7 +84,7 @@ inline Vec3 __attribute__((overloadable)) divide(Vec3 a, double b)
     return result;
 };
 
-double __attribute__((overloadable)) prod(Vec3 a, Vec3 b)
+inline double __attribute__((overloadable)) prod(Vec3 a, Vec3 b)
 {
     return a.x*b.x + a.y*b.y + a.z*b.z;
 };
@@ -92,4 +92,16 @@ double __attribute__((overloadable)) prod(Vec3 a, Vec3 b)
 inline Vec3 __attribute__((overloadable)) getReflection(Vec3 n, Vec3 l)
 {
     return substract(l, multiply(n, 2 * prod(n, l)));
+};
+
+inline Vec3 __attribute__((overloadable)) vabs(Vec3 a)
+{
+    Vec3 r = {fabs(a.x), fabs(a.y), fabs(a.z)};
+    return r;
+};
+
+inline Vec3 __attribute__((overloadable)) vfloor(Vec3 a)
+{
+    Vec3 r = {floorf(a.x), floorf(a.y), floorf(a.z)};
+    return r;
 };

@@ -23,7 +23,7 @@ typedef struct SceneEnviroment
     SceneObject * objects;
 } SceneEnviroment;
 
-double sphereDestFunction(Vec3 point, const SceneObject * this);
+double sphereDestFunction(Vec3 point, SceneObject * this);
 
 void render_frame_of_enviroment_PARALEL(RGB * frameBuffer,
                                         Vec2 left_up_render_corner,
@@ -40,6 +40,8 @@ void render_frame_of_enviroment_PERSPECTIVE(RGB * frameBuffer,
                                         SceneEnviroment * enviroment);
 
 RGB castRay(CameraRay * ray, SceneEnviroment * enviroment);
+
+int sign(double a);
 
 SceneObject * getNearestObject(SceneEnviroment * scene, Vec3 point, double * dest);
 

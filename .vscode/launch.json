@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "gcc - Сборка и отладка активного файла",
+            "name": "gcc - Debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/Raymarching",
@@ -14,8 +14,7 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "lldb",
-            // "preLaunchTask": "C/C++: gcc сборка активного файла"
+            "MIMode": "lldb"
         }
     ]
 }

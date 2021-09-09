@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(Raymarching VERSION 0.1.0)
 
-set(C_STANDARD 99)
+set (CMAKE_C_STANDARD 17)
 
 find_package(SDL2 REQUIRED)
 
@@ -30,11 +30,16 @@ add_library(RGB_LIBRARY STATIC
   ../RGB.h
 )
 
-add_executable(${PROJECT_NAME} main.c)
+add_library(CUSTOM_OBJECTS STATIC
+  ./CusromObjects/CustomObjects.h
+  ./CusromObjects/CustomObjects.c
+)
 
+add_executable(${PROJECT_NAME} main.c)
 
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} Vec3_LIBRARY)
 target_link_libraries(${PROJECT_NAME} Vec2_LIBRARY)
 target_link_libraries(${PROJECT_NAME} SceneEnviroment_LIBRARY)
 target_link_libraries(${PROJECT_NAME} RGB_LIBRARY)
+target_link_libraries(${PROJECT_NAME} CUSTOM_OBJECTS)
