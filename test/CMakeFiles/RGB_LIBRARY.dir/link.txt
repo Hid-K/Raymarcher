@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libRGB_LIBRARY.a CMakeFiles/RGB_LIBRARY.dir/Users/laptevaleksander/git/Raymarcher/RGB.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libRGB_LIBRARY.a

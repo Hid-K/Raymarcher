@@ -32,4 +32,8 @@ Vec3 __attribute__((overloadable)) getReflection(Vec3 n, Vec3 l);
 
 Vec3 __attribute__((overloadable)) absv(Vec3 a);
 
+Vec3 __attribute__((overloadable)) vabs(Vec3 a);
+
+Vec3 __attribute__((overloadable)) vfloor(Vec3 a);
+
 #endif

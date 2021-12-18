@@ -56,6 +56,7 @@ void render_frame_of_enviroment_PARALEL(RGB * frame_buffer,
             ray.end = ray.origin;
             ray.parentCamera = &enviroment->main_camera;
             ray.path_way = 0;
+            ray.steps_count = 0;
             ray.reflections_count = 0;
 
             RGB ray_color = castRay(&ray, enviroment);
@@ -169,7 +170,7 @@ inline RGB castRay(CameraRay * ray, SceneEnviroment * enviroment)
 {
     RGB resultColor = {0,0,0};
 
-    for(;ray->path_way <= enviroment->main_camera.FOV;)
+    for(;ray->steps_count <= enviroment->main_camera.FOV;)
     {
         for(size_t i = 0; i < enviroment->objects_count; ++i)
         {
@@ -180,6 +181,7 @@ inline RGB castRay(CameraRay * ray, SceneEnviroment * enviroment)
         register SceneObject * nearectObject = getNearestObject(enviroment, ray->end, &nearestObjectDest);
 
         ray->path_way += fabs(nearestObjectDest);
+        ray->steps_count++;
 
         if(
             nearestObjectDest <= NEAR &&
@@ -204,14 +206,9 @@ inline RGB castRay(CameraRay * ray, SceneEnviroment * enviroment)
 
         Vec3 dCurrPoint = multiply(ray->direction, nearestObjectDest);
 
-        // if(nearectObject->get_distance(ray->end,                  nearectObject) >
-        //    nearectObject->get_distance(add(ray->end, dCurrPoint), nearectObject))
-        // {
-        //     printf("s\n");
-        // };
-
         ray->end = add(ray->end, dCurrPoint);
     };
+
     return resultColor;
 };
 

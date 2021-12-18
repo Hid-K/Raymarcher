@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/Raymarching.dir/main.c.o -o Raymarching  -L/usr/local/Cellar/sdl2/2.0.14_1/lib  -lSDL2 libVec3_LIBRARY.a libVec2_LIBRARY.a libSceneEnviroment_LIBRARY.a libRGB_LIBRARY.a 

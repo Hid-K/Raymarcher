@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libVec2_LIBRARY.a CMakeFiles/Vec2_LIBRARY.dir/Users/laptevaleksander/git/Raymarcher/Vec/Vec2/Vec2.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libVec2_LIBRARY.a
