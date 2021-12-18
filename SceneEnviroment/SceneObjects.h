@@ -13,10 +13,11 @@ typedef struct SceneObject
 {
     Vec3 origin;
     SceneEnviroment * parentEnviroment;
+  
     RGB (*shader)(CameraRay * ray, SceneObject * this);
     double (*get_distance)(Vec3 point, SceneObject * this);
     Vec3 (*getNormal)(Vec3 point, SceneObject * this);
-
+  
     void * objectSpecialData;
 
 } SceneObject;

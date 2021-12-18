@@ -101,8 +101,9 @@ SceneObject createSimpleSphere(double radius, Vec3 origin, SceneEnviroment * sce
 
     sphere.get_distance = sphereDestFunction;
     sphere.shader = simpleRaindowShader;
+    sphere.rayDeflection = NULL;
     sphere.getNormal = getSphereNormal;
-
+  
     sphere.origin = origin;
 
     sphere.objectSpecialData = malloc(sizeof(double));
@@ -120,6 +121,7 @@ SceneObject createSimpleFlatSurface(SceneEnviroment * sceneEnv, double z_pos)
 
     surface.get_distance = surfaceDestFunction;
     surface.shader = simpleGRAYShader;
+    surface.rayDeflection = NULL;
 
     surface.objectSpecialData = malloc(sizeof(double));
 
@@ -128,20 +130,36 @@ SceneObject createSimpleFlatSurface(SceneEnviroment * sceneEnv, double z_pos)
     return surface;
 };
 
-SceneObject createSimpleCube(double radius, Vec3 origin, SceneEnviroment * sceneEnv)
+double getMirrorDest(Vec3 point, const SceneObject * this)
 {
-    SceneObject cube;
-
-    cube.parentEnviroment = sceneEnv;
-    cube.origin = origin;
-
-    cube.get_distance = cubeDestFunction;
-    cube.shader = simpleGRAYShader;
-    cube.getNormal = getCubeNormal;
-
-    cube.objectSpecialData = malloc(sizeof(double));
-
-    *((double*)(cube.objectSpecialData)) = radius;
-
-    return cube;
+    return fabs(10 - point.x) - 1;
 };
+
+RGB mirrorShader(CameraRay * ray, const SceneObject * this)
+{
+    // if(ray->reflections_count <= 3)
+    // {
+    //     Vec3 normal = {10 - ray->end.x, 0, 0};
+    //     ray->direction = getReflection(normal, ray->direction);
+
+    //     ray->origin = add(ray->end, multiply(normal, NEAR));
+    //     ray->end = ray->origin;
+
+    //     ray->reflections_count++;
+
+    //     return castRay(ray, this->objectSpecialData);
+    // } return RGB_WHI;
+    return RGB_WHI;
+};
+
+SceneObject createMirror(SceneEnviroment * sceneEnv)
+{
+    SceneObject mirror;
+
+    mirror.parentEnviroment = sceneEnv;
+
+    mirror.get_distance = getMirrorDest;
+    mirror.shader = mirrorShader;
+    mirror.rayDeflection = NULL;
+
+    return mirror;

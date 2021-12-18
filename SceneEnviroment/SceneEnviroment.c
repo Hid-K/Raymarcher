@@ -172,6 +172,11 @@ inline RGB castRay(CameraRay * ray, SceneEnviroment * enviroment)
 
     for(;ray->steps_count <= enviroment->main_camera.FOV;)
     {
+        for(size_t i = 0; i < enviroment->objects_count; ++i)
+        {
+            if(enviroment->objects[i].rayDeflection != NULL)
+                enviroment->objects[i].rayDeflection(ray, &enviroment->objects[i]);
+        };
         double nearestObjectDest = 0;
         register SceneObject * nearectObject = getNearestObject(enviroment, ray->end, &nearestObjectDest);
 
