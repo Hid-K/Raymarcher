@@ -1,7 +1,7 @@
 #ifndef RGB_STRUCT_H
 #define RGB_STRUCT_H
 
-#include "Vec/Vec.h"
+#include "../Vec/Vec.h"
 
 typedef struct
 {

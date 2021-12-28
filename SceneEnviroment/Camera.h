@@ -3,7 +3,7 @@
 
 #include "../Vec/Vec.h"
 #include <stddef.h>
-#include "../RGB.h"
+#include "../RGB/RGB.h"
 
 typedef struct
 {

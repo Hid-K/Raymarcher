@@ -5,7 +5,7 @@
 #include "../Vec/Vec.h"
 #include <stddef.h>
 #include <stdlib.h>
-#include "../RGB.h"
+#include "../RGB/RGB.h"
 #include <stdio.h>
 
 static const double NEAR = 0.001;

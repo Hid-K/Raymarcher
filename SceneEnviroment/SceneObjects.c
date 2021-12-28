@@ -101,7 +101,6 @@ SceneObject createSimpleSphere(double radius, Vec3 origin, SceneEnviroment * sce
 
     sphere.get_distance = sphereDestFunction;
     sphere.shader = simpleRaindowShader;
-    sphere.rayDeflection = NULL;
     sphere.getNormal = getSphereNormal;
   
     sphere.origin = origin;
@@ -121,7 +120,6 @@ SceneObject createSimpleFlatSurface(SceneEnviroment * sceneEnv, double z_pos)
 
     surface.get_distance = surfaceDestFunction;
     surface.shader = simpleGRAYShader;
-    surface.rayDeflection = NULL;
 
     surface.objectSpecialData = malloc(sizeof(double));
 
@@ -160,6 +158,6 @@ SceneObject createMirror(SceneEnviroment * sceneEnv)
 
     mirror.get_distance = getMirrorDest;
     mirror.shader = mirrorShader;
-    mirror.rayDeflection = NULL;
 
     return mirror;
+}

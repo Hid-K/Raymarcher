@@ -26,8 +26,8 @@ add_library(SceneEnviroment_LIBRARY STATIC
 )
 
 add_library(RGB_LIBRARY STATIC
-  ../RGB.c
-  ../RGB.h
+  ../RGB/RGB.c
+  ../RGB/RGB.h
 )
 
 add_library(CUSTOM_OBJECTS STATIC
