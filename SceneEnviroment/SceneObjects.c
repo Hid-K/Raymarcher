@@ -128,12 +128,12 @@ SceneObject createSimpleFlatSurface(SceneEnviroment * sceneEnv, double z_pos)
     return surface;
 };
 
-double getMirrorDest(Vec3 point, const SceneObject * this)
+double getMirrorDest(Vec3 point, SceneObject * this)
 {
     return fabs(10 - point.x) - 1;
 };
 
-RGB mirrorShader(CameraRay * ray, const SceneObject * this)
+RGB mirrorShader(CameraRay * ray, SceneObject * this)
 {
     // if(ray->reflections_count <= 3)
     // {

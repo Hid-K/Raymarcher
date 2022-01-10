@@ -2,6 +2,7 @@
 #define SCENEOBJECT_H
 
 #include "SceneEnviroment.h"
+#include "../Vec/Vec.h"
 #include <stdlib.h>
 #include <math.h>
 
