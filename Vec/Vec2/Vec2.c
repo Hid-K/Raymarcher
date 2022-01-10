@@ -1,25 +1,25 @@
-#include "Vec2.h"
+#include "../Vec.h"
 
-inline Vec2 multiply(Vec2 a, double b)
+inline Vec2 multiply_Vec2(Vec2 a, double b)
 {
     Vec2 result = {a.x*b, a.y*b};
     return result;
 };
 
-inline Vec2 add(Vec2 a, Vec2 b)
+inline Vec2 add_Vec2(Vec2 a, Vec2 b)
 {
     Vec2 result = {a.x+b.x, a.y+b.y};
     return result;
 };
 
-inline Vec2 normalize(Vec2 a)
+inline Vec2 normalize_Vec2(Vec2 a)
 {
     double l = length(a);
     Vec2 result = {a.x/l, a.y/l};
     return result;
 };
 
-// Vec2 rotateAboutX(Vec2 v, double a)
+// Vec2 rotateAboutX_Vec2(Vec2 v, double a)
 // {
 //     Vec2 c1 = {1,0     ,0      };
 //     Vec2 c2 = {0,cos(a),-sin(a)};
@@ -30,7 +30,7 @@ inline Vec2 normalize(Vec2 a)
 //     return res;
 // };
 
-// Vec2 rotateAboutY(Vec2 v, double a)
+// Vec2 rotateAboutY_Vec2(Vec2 v, double a)
 // {
 //     Vec2 c1 = {cos(a),0,sin(a)};
 //     Vec2 c2 = {0,1,0};
@@ -41,7 +41,7 @@ inline Vec2 normalize(Vec2 a)
 //     return res;
 // };
 
-// Vec2 rotateAboutZ(Vec2 v, double a)
+// Vec2 rotateAboutZ_Vec2(Vec2 v, double a)
 // {
 //     Vec2 c1 = {cos(a),-sin(a),0};
 //     Vec2 c2 = {sin(a),cos(a),0};
@@ -52,36 +52,36 @@ inline Vec2 normalize(Vec2 a)
 //     return res;
 // };
 
-inline double length(Vec2 a)
+inline double length_Vec2(Vec2 a)
 {
     return sqrt(a.x*a.x + a.y*a.y);
 };
 
-inline Vec2 substract(Vec2 a, Vec2 b)
+inline Vec2 substract_Vec2(Vec2 a, Vec2 b)
 {
     Vec2 result = {a.x-b.x, a.y-b.y};
     return result;
 };
 
-inline Vec2 absv(Vec2 a)
+inline Vec2 absv_Vec2(Vec2 a)
 {
     a.x = fabs(a.x);
     a.y = fabs(a.y);
     return a;
 };
 
-inline Vec2 divide(Vec2 a, double b)
+inline Vec2 divide_Vec2(Vec2 a, double b)
 {
     Vec2 result = {a.x/b, a.y/b,};
     return result;
 };
 
-double prod(Vec2 a, Vec2 b)
+double prod_Vec2(Vec2 a, Vec2 b)
 {
     return a.x*b.x + a.y*b.y;
 };
 
-inline Vec2 getReflection(Vec2 n, Vec2 l)
+inline Vec2 getReflection_Vec2(Vec2 n, Vec2 l)
 {
     return substract(multiply(n,prod(n,l)*2), l);
 };

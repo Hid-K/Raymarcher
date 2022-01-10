@@ -3,33 +3,33 @@
 
 #include <math.h>
 
-typedef struct
+typedef struct Vec2
 {
     double x,y;
 } Vec2;
 
-Vec2 multiply(Vec2 a, double b);
+Vec2 multiply_Vec2(Vec2 a, double b);
 
-Vec2 add(Vec2 a, Vec2 b);
+Vec2 add_Vec2(Vec2 a, Vec2 b);
 
-double length(Vec2 a);
+double length_Vec2(Vec2 a);
 
-Vec2 normalize(Vec2 a);
+Vec2 normalize_Vec2(Vec2 a);
 
-// Vec2 rotateAboutX(Vec2 v, double a);
+// Vec2 rotateAboutX_Vec2(Vec2 v, double a);
 
-// Vec2 rotateAboutY(Vec2 v, double a);
+// Vec2 rotateAboutY_Vec2(Vec2 v, double a);
 
-// Vec2 rotateAboutZ(Vec2 v, double a);
+// Vec2 rotateAboutZ_Vec2(Vec2 v, double a);
 
-Vec2 substract(Vec2 a, Vec2 b);
+Vec2 substract_Vec2(Vec2 a, Vec2 b);
 
-Vec2 divide(Vec2 a, double b);
+Vec2 divide_Vec2(Vec2 a, double b);
 
-double prod(Vec2 a, Vec2 b);
+double prod_Vec2(Vec2 a, Vec2 b);
 
-Vec2 getReflection(Vec2 n, Vec2 l);
+Vec2 getReflection_Vec2(Vec2 n, Vec2 l);
 
-Vec2 absv(Vec2 a);
+Vec2 absv_Vec2(Vec2 a);
 
 #endif
