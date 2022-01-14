@@ -6,9 +6,13 @@
 #include <math.h>
 #include "../SceneEnviroment/SceneObjects.h"
 #include "./CusromObjects/CustomObjects.h"
+#include <pthread.h>
+#include "MultithreadComputing/MultithreadComputing.h"
+#include <sys/time.h> 
 
-size_t windowWidth = 255;
-size_t windowHeight = 255;
+
+size_t windowWidth = 256;
+size_t windowHeight = 256;
 
 int main()
 {
@@ -55,7 +59,7 @@ int main()
             {0,1,0},
             {0,0,-1},
             {1,0,0},
-            50
+            200
         },
         0,
         2,
@@ -64,7 +68,7 @@ int main()
 
     Vec3 SCobjectPos = {0,0,0};
 
-    SceneObject SCobject = createSimpleSphericalRoom(100, SCobjectPos, &scieneEnv);
+    SceneObject SCobject = createSimpleFlatSurface(&scieneEnv, -10);
 
     memcpy(&scieneEnv.objects[0], &SCobject, sizeof(SCobject));
 
@@ -76,13 +80,11 @@ int main()
 
     memcpy(&scieneEnv.objects[1], &SCobject, sizeof(SCobject));
 
-
-    Vec2 n = {0,0};
-    Vec2 n1 = {windowWidth,windowHeight};
-
     double camXDAngle = 0;
     double camYDAngle = 0;
     double camZDAngle = 0;
+
+    initMultithreadComputer(frame_buffer, &scieneEnv, windowWidth, windowHeight);
 
     for(;quit == 0;)
     {
@@ -161,8 +163,8 @@ int main()
                     frame_buffer = malloc(sizeof(RGB) * windowHeight * windowWidth);
                     if(frame_buffer != NULL)
                     {
-                        n1.x = windowWidth;
-                        n1.y = windowHeight;
+                        // n1.x = windowWidth;
+                        // n1.y = windowHeight;
                         printf ("MESSAGE: Window size succesfully changed!\n");
                     } else
                     {
@@ -177,8 +179,14 @@ int main()
             }
         };
         
+        struct timeval t1, t2;
+        double elapsedTime;
 
-        render_frame_of_enviroment_PARALEL(frame_buffer, n, n1, windowHeight, windowWidth, &scieneEnv);
+        // start timer
+        gettimeofday(&t1, NULL);
+
+        startRender();
+
         SDL_RenderClear(mainWindowRenderer);
         for(size_t x = 0; x < windowWidth; ++x)
         {
@@ -195,6 +203,14 @@ int main()
         SDL_RenderPresent(mainWindowRenderer);
 
         SDL_Delay(1000/6);
+        // stop timer
+        gettimeofday(&t2, NULL);
+
+        elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;      // sec to ms
+        elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;   // us to ms
+
+        printf("%f fps\n", 1000/elapsedTime);
+
         printf("Rendered!\n");
     };
 

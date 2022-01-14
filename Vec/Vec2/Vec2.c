@@ -19,39 +19,6 @@ inline Vec2 normalize_Vec2(Vec2 a)
     return result;
 };
 
-// Vec2 rotateAboutX_Vec2(Vec2 v, double a)
-// {
-//     Vec2 c1 = {1,0     ,0      };
-//     Vec2 c2 = {0,cos(a),-sin(a)};
-//     Vec2 c3 = {0,sin(a),cos(a) };
-
-//     Vec2 res = {prod(v, c1), prod(v, c2), prod(v, c3)};
-
-//     return res;
-// };
-
-// Vec2 rotateAboutY_Vec2(Vec2 v, double a)
-// {
-//     Vec2 c1 = {cos(a),0,sin(a)};
-//     Vec2 c2 = {0,1,0};
-//     Vec2 c3 = {-sin(a),0,cos(a)};
-
-//     Vec2 res = {prod(v, c1), prod(v, c2), prod(v, c3)};
-
-//     return res;
-// };
-
-// Vec2 rotateAboutZ_Vec2(Vec2 v, double a)
-// {
-//     Vec2 c1 = {cos(a),-sin(a),0};
-//     Vec2 c2 = {sin(a),cos(a),0};
-//     Vec2 c3 = {0,0,0};
-
-//     Vec2 res = {prod(v, c1), prod(v, c2), prod(v, c3)};
-
-//     return res;
-// };
-
 inline double length_Vec2(Vec2 a)
 {
     return sqrt(a.x*a.x + a.y*a.y);

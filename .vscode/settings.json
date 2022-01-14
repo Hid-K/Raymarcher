@@ -60,7 +60,8 @@
         "unordered_map": "c",
         "utility": "c",
         "vector": "c",
-        "sceneenviroment.h": "c"
+        "sceneenviroment.h": "c",
+        "rgb.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/test"
 }

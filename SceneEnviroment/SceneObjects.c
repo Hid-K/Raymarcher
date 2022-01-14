@@ -12,6 +12,13 @@ Vec3 getSphereNormal(Vec3 point, SceneObject * this)
     return normalize(substract(this->origin, point));
 };
 
+Vec3 getSurfaceNormal(Vec3 point, SceneObject * this)
+{
+    Vec3 res = {0,0,*((double*)this->objectSpecialData) - point.z};
+    return normalize(res);
+};
+
+
 double cubeDestFunction(Vec3 point, SceneObject * this)
 {
     return sqrt(pow(fmax(0, fabs(point.x)-*((double*)this->objectSpecialData)), 2) +
@@ -47,7 +54,7 @@ double surfaceDestFunction(Vec3 point, SceneObject * this)
 
 RGB simpleRaindowShader(CameraRay * ray, SceneObject * this)
 {
-    RGB color_spectrum = {0, 0, 0};
+    RGB color_spectrum = {0.1, 0.1, 0.1};
     if(ray->reflections_count <= 3)
     {
         Vec3 normal = normalize(substract(ray->end, this->origin));
@@ -120,6 +127,8 @@ SceneObject createSimpleFlatSurface(SceneEnviroment * sceneEnv, double z_pos)
 
     surface.get_distance = surfaceDestFunction;
     surface.shader = simpleGRAYShader;
+
+    surface.getNormal = getSurfaceNormal;
 
     surface.objectSpecialData = malloc(sizeof(double));
 
