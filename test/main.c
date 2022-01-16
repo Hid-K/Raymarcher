@@ -7,7 +7,7 @@
 #include "../SceneEnviroment/SceneObjects.h"
 #include "./CusromObjects/CustomObjects.h"
 #include <pthread.h>
-#include "MultithreadComputing/MultithreadComputing.h"
+#include "../MultithreadComputing/MultithreadComputing.h"
 #include <sys/time.h> 
 
 
@@ -84,7 +84,7 @@ int main()
     double camYDAngle = 0;
     double camZDAngle = 0;
 
-    initMultithreadComputer(frame_buffer, &scieneEnv, windowWidth, windowHeight);
+    initMultithreadComputer(frame_buffer, &scieneEnv, windowWidth, windowHeight, 9);
 
     for(;quit == 0;)
     {

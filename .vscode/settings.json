@@ -61,7 +61,8 @@
         "utility": "c",
         "vector": "c",
         "sceneenviroment.h": "c",
-        "rgb.h": "c"
+        "rgb.h": "c",
+        "multithreadcomputing.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/test"
 }

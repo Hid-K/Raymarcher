@@ -25,6 +25,11 @@ add_library(SceneEnviroment_LIBRARY STATIC
   ../SceneEnviroment/SceneObjects.c
 )
 
+add_library(MultithreadComputing_LIBRARY STATIC
+  ../MultithreadComputing/MultithreadComputing.h
+  ../MultithreadComputing/MultithreadComputing.c
+)
+
 add_library(RGB_LIBRARY STATIC
   ../RGB/RGB.c
   ../RGB/RGB.h
@@ -38,6 +43,7 @@ add_library(CUSTOM_OBJECTS STATIC
 add_executable(${PROJECT_NAME} main.c)
 
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} MultithreadComputing_LIBRARY)
 target_link_libraries(${PROJECT_NAME} Vec_LIBRARY)
 target_link_libraries(${PROJECT_NAME} SceneEnviroment_LIBRARY)
 target_link_libraries(${PROJECT_NAME} RGB_LIBRARY)
