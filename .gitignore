@@ -56,3 +56,5 @@ dkms.conf
 # CMake build folder
 build/
 .vscode/
+.vscode/*.log
+.DS_Store

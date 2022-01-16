@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Fri Jan 14 23:31:30 2022
+# Make data base, printed on Sun Jan 16 20:08:04 2022
 
 # Variables
 
@@ -24,7 +24,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/laptevaleksander/git/Raymarcher
+CURDIR := /Users/laptevaleksander/Documents/GitHub/Raymarcher
 # makefile
 SHELL = /bin/sh
 # environment
@@ -36,7 +36,7 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/bw/b8vtsgn95cx314q8z52x5s1r0000gn/T/vscode-ipc-0d594563-9716-4360-9808-80102bb7f416.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/bw/b8vtsgn95cx314q8z52x5s1r0000gn/T/vscode-ipc-91a083d1-14ee-4343-8f34-f7557145570a.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -58,7 +58,7 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.vhT0sGuBcP/Listeners
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /Users/laptevaleksander/git/Raymarcher
+PWD = /Users/laptevaleksander/Documents/GitHub/Raymarcher
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -148,9 +148,9 @@ VSCODE_PID = 3780
 
 # Directories
 
-# . (device 16777221, inode 25015856): 17 files, no impossibilities.
+# . (device 16777221, inode 33459569): 16 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -222,7 +222,7 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Jan 14 23:31:30 2022
+# Finished Make data base on Sun Jan 16 20:08:04 2022
 
  
 make: *** No rule to make target `all'.  Stop.
