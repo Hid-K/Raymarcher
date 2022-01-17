@@ -11,7 +11,7 @@ inline void normalize_color(RGB * color)
     if(color->b > 1) color->b = 1;
 };
 
-inline __attribute__((overloadable)) RGB add_color(RGB a, RGB b)
+inline RGB add_color_RGB(RGB a, RGB b)
 {
     RGB res;
 
@@ -23,7 +23,7 @@ inline __attribute__((overloadable)) RGB add_color(RGB a, RGB b)
 
 };
 
-inline RGB __attribute__((overloadable)) add_color(RGB a, Vec3 b)
+inline RGB add_color_VEC3(RGB a, Vec3 b)
 {
     RGB res;
 
@@ -34,7 +34,7 @@ inline RGB __attribute__((overloadable)) add_color(RGB a, Vec3 b)
     return res;
 };
 
-inline RGB __attribute__((overloadable)) add_color(RGB a, double b)
+inline RGB add_color_DOUBLE(RGB a, double b)
 {
     RGB res;
 
