@@ -7,8 +7,6 @@ find_package(SDL2 REQUIRED)
 
 include_directories(${SDL2_INCLUDE_DIRS})
 
-add_compile_options(-lpthread)
-
 add_library(Vec_LIBRARY STATIC
   ../Vec/Vec3/Vec3.h
   ../Vec/Vec3/Vec3.c
@@ -48,3 +46,5 @@ target_link_libraries(${PROJECT_NAME} Vec_LIBRARY)
 target_link_libraries(${PROJECT_NAME} SceneEnviroment_LIBRARY)
 target_link_libraries(${PROJECT_NAME} RGB_LIBRARY)
 target_link_libraries(${PROJECT_NAME} CUSTOM_OBJECTS)
+target_link_libraries(${PROJECT_NAME} m)
+target_link_libraries(${PROJECT_NAME} -lpthread)
