@@ -3,10 +3,10 @@
 
 void * compileDLLSource(const uint8_t * source, size_t sourceSize)
 {
-    #define SOURCE_CODE_PATH "/Users/laptevaleksander/Documents/GitHub/Raymarcher/build/RAYMARCHING_C_COMPILABLE_SOURCE.c"
-    #define DLL_PATH "/Users/laptevaleksander/Documents/GitHub/Raymarcher/build/RAYMARCHING_C_COMPILABLE_SOURCE.so"
-    #define DLL_OBJECT_PATH "/Users/laptevaleksander/Documents/GitHub/Raymarcher/build/RAYMARCHING_C_COMPILABLE_SOURCE.o"
-    #define RAYMARCHER_SOURCE_FOLDER_PATH "/Users/laptevaleksander/Documents/GitHub/Raymarcher/"
+    #define SOURCE_CODE_PATH "./build/RAYMARCHING_C_COMPILABLE_SOURCE.c"
+    #define DLL_PATH ".//build/RAYMARCHING_C_COMPILABLE_SOURCE.so"
+    #define DLL_OBJECT_PATH ".//build/RAYMARCHING_C_COMPILABLE_SOURCE.o"
+    #define RAYMARCHER_SOURCE_FOLDER_PATH ".//"
 
     FILE * sourceFile = fopen(SOURCE_CODE_PATH, "w");
 
