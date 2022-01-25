@@ -64,5 +64,5 @@
         "rgb.h": "c",
         "multithreadcomputing.h": "c"
     },
-    "cmake.sourceDirectory": "${workspaceFolder}/test"
+    "cmake.sourceDirectory": "${workspaceFolder}/."
 }

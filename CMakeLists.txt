@@ -10,34 +10,33 @@ include_directories(${SDL2_INCLUDE_DIRS})
 add_compile_options(-lpthread)
 
 add_library(Vec_LIBRARY STATIC
-  ../Vec/Vec3/Vec3.h
-  ../Vec/Vec3/Vec3.c
-  ../Vec/Vec2/Vec2.h
-  ../Vec/Vec2/Vec2.c
-  ../Vec/Vec.h
+  Vec/Vec3/Vec3.h
+  Vec/Vec3/Vec3.c
+  Vec/Vec2/Vec2.h
+  Vec/Vec2/Vec2.c
+  Vec/Vec.h
 )
 
 add_library(SceneEnviroment_LIBRARY STATIC
-  ../SceneEnviroment/SceneEnviroment.h
-  ../SceneEnviroment/SceneEnviroment.c
+  SceneEnviroment/SceneEnviroment.h
+  SceneEnviroment/SceneEnviroment.c
 
-  ../SceneEnviroment/SceneObjects.h
-  ../SceneEnviroment/SceneObjects.c
+  SceneEnviroment/SceneObjects.h
+  SceneEnviroment/SceneObjects.c
+)
+add_library(DLLProcessor_LIBRARY STATIC
+  DLLProcessor/DLLProcessor.h
+  DLLProcessor/DLLProcessor.c
 )
 
 add_library(MultithreadComputing_LIBRARY STATIC
-  ../MultithreadComputing/MultithreadComputing.h
-  ../MultithreadComputing/MultithreadComputing.c
+  MultithreadComputing/MultithreadComputing.h
+  MultithreadComputing/MultithreadComputing.c
 )
 
 add_library(RGB_LIBRARY STATIC
-  ../RGB/RGB.c
-  ../RGB/RGB.h
-)
-
-add_library(CUSTOM_OBJECTS STATIC
-  ./CusromObjects/CustomObjects.h
-  ./CusromObjects/CustomObjects.c
+  RGB/RGB.c
+  RGB/RGB.h
 )
 
 add_executable(${PROJECT_NAME} main.c)
@@ -47,4 +46,4 @@ target_link_libraries(${PROJECT_NAME} MultithreadComputing_LIBRARY)
 target_link_libraries(${PROJECT_NAME} Vec_LIBRARY)
 target_link_libraries(${PROJECT_NAME} SceneEnviroment_LIBRARY)
 target_link_libraries(${PROJECT_NAME} RGB_LIBRARY)
-target_link_libraries(${PROJECT_NAME} CUSTOM_OBJECTS)
+target_link_libraries(${PROJECT_NAME} DLLProcessor_LIBRARY)

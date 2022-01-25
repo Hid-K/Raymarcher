@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libSceneEnviroment_LIBRARY.a CMakeFiles/SceneEnviroment_LIBRARY.dir/Users/laptevaleksander/git/Raymarcher/SceneEnviroment/SceneEnviroment.c.o CMakeFiles/SceneEnviroment_LIBRARY.dir/Users/laptevaleksander/git/Raymarcher/SceneEnviroment/SceneObjects.c.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libSceneEnviroment_LIBRARY.a
