@@ -39,6 +39,11 @@ add_library(RGB_LIBRARY STATIC
   RGB/RGB.h
 )
 
+add_library(SingleLinkedList_LIBRARY STATIC
+  SingleLinkedList/SLL.h
+  SingleLinkedList/SLL.c
+)
+
 add_executable(${PROJECT_NAME} main.c)
 
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
@@ -47,3 +52,4 @@ target_link_libraries(${PROJECT_NAME} Vec_LIBRARY)
 target_link_libraries(${PROJECT_NAME} SceneEnviroment_LIBRARY)
 target_link_libraries(${PROJECT_NAME} RGB_LIBRARY)
 target_link_libraries(${PROJECT_NAME} DLLProcessor_LIBRARY)
+target_link_libraries(${PROJECT_NAME} SingleLinkedList_LIBRARY)

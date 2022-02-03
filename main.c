@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <math.h>
 #include "DLLProcessor/DLLProcessor.h"
+#include "SIngleLinkedList/SLL.h"
+
+
 
 int main()
 {   
@@ -49,6 +52,9 @@ int main()
         "return result;"
     "}";
 
+
+    printf("DLL test");
+
     size_t rawSize;
 
     void * objectRAW = packObjectDataIntoRAW(obj,
@@ -83,6 +89,54 @@ int main()
 
        printf("%f %f %f\n", res.x, res.y, res.z);
     }
+
+    if(objectExtractedFromRAW->shader != NULL &&
+       objectExtractedFromRAW->get_distance != NULL &&
+       objectExtractedFromRAW->getNormal != NULL)
+       {
+           printf("DLL test passed!");
+       }
+       else
+       {
+           printf("ERROR PASSING DLL TEST!");
+       }
+
+       printf("Starting SLL test!");
+
+    SLL list = getSLL();
+    
+    char * d0 = "ABOBA";
+    char * d1 = "NIGGERS";
+    char * d2 = "SNUS";
+    char * d3 = "SUS";
+    
+    addNode(&list, d0);
+    addNode(&list, d1);
+    addNode(&list, d2);
+    addNode(&list, d3);
+    
+    for (int i = 0; i < 4; ++i)
+    {
+        printf("%s\n", (char *)getNodeDataBySerialNumber(&list, i));
+    }
+
+    deleteNodeBySerialNumber(&list, 2);
+
+    for (int i = 0; i < 3; ++i)
+    {
+        printf("%s\n", (char *)getNodeDataBySerialNumber(&list, i));
+    }
+
+    addNode(&list, d2);
+
+    for (int i = 0; i < 4; ++i)
+    {
+        printf("%s\n", (char *)getNodeDataBySerialNumber(&list, i));
+    }
+    
+    printf("Finished!\n");
+
+    return -1;
 
     return 0;
 };
