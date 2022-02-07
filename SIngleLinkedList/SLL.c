@@ -1,6 +1,6 @@
 #include "SLL.h"
 
-void on_sigabrt (int signum)
+void on_sig (int signum)
 {
   signal (signum, SIG_DFL);
   longjmp (env, 1);

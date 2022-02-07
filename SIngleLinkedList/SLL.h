@@ -13,13 +13,15 @@ jmp_buf env;
 #define TRY \
 { \
   if (setjmp (env) == 0) { \
-    signal(SIGABRT, &on_sigabrt);
+    signal(SIGABRT, &on_sig); \
+    signal(SIGSEGV, &on_sig);
 
 #define CATCH \
     signal (SIGABRT, SIG_DFL); \
+    signal(SIGSEGV, SIG_DFL); \
   } \
   else \
-  { \
+  {
 
 #define CATCHEND \
   } \
@@ -47,6 +49,8 @@ SLL getSLL();
 void addNode(SLL * list, void * data);
 
 void deleteNodeBySerialNumber(SLL * list, size_t nodeNumber);
+
+void * sllToRaw(SLL * list);
 
 
 #endif

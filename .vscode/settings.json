@@ -64,7 +64,8 @@
         "rgb.h": "c",
         "multithreadcomputing.h": "c",
         "sceneobjects.h": "c",
-        "dllprocessor.h": "c"
+        "dllprocessor.h": "c",
+        "socketclient.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/."
 }
