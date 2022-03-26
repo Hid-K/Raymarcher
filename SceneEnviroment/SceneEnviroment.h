@@ -45,4 +45,10 @@ int sign(double a);
 
 SceneObject * getNearestObject(SceneEnviroment * scene, Vec3 point, double * dest);
 
+double sdSmoothUnion( double d1, double d2, double k ) 
+{
+    float h = clamp( 0.5 + 0.5*(d2-d1)/k, 0.0, 1.0 );
+    return mix( d2, d1, h ) - k*h*(1.0-h); 
+}
+
 #endif

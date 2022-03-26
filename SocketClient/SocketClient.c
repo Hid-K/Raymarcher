@@ -1,7 +1,7 @@
 #include "SocketClient.h"
 
 
-sockfd_t connectToRaymarcherServer(uint32_t serverIP, uint16_t serverPort = RAYMARCHER_DEFAULT_SERVER_PORT)
+sockfd_t connectToRaymarcherServer(uint32_t serverIP, uint16_t serverPort)
 {
     int sockfd, connfd;
     struct sockaddr_in servaddr, cli;

@@ -14,11 +14,13 @@
 
 typedef int sockfd_t;
 
-sockfd_t connectToRaymarcherServer(uint32_t serverIP, uint16_t serverPort = RAYMARCHER_DEFAULT_SERVER_PORT);
+sockfd_t connectToRaymarcherServer(uint32_t serverIP, uint16_t serverPort);
+
+#define connectToRaymarcherServer(serverIP) connectToRaymarcherServer(serverIP, RAYMARCHER_DEFAULT_SERVER_PORT)
 
 void serverDataEventHandler(void * data, size_t dataLength);
 
-int sendDataToServer(void * data, size_t dataLength);
+void * sendDataToServer(sockfd_t socket, void * data, size_t dataLength);
 
 void * sllToRawData(SLL * list);
 
